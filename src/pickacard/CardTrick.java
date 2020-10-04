@@ -21,15 +21,20 @@ public class CardTrick {
         Card u = new Card();
         
         //#insert code to ask the user for Card value and suit, create their card
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
  
-        System.out.print("Enter suit (0 = Hearts, 1 = Diamonds, 2 = Spades, 3 = Clubs): ");
-        int cSuit = sc.nextInt();
-        u.setSuit(Card.SUITS[cSuit]);
+        //System.out.print("Enter suit (0 = Hearts, 1 = Diamonds, 2 = Spades, 3 = Clubs): ");
+        //int cSuit = sc.nextInt();
+        //u.setSuit(Card.SUITS[cSuit]);
         
-        System.out.print("Enter value: (1-13): ");
-        int nValue = sc.nextInt();
-        u.setValue(nValue);
+        //System.out.print("Enter value: (1-13): ");
+        //int nValue = sc.nextInt();
+        //u.setValue(nValue);
+        //System.out.println("Your card is a " + u.getValue() + " of "+ u.getSuit() + ".");
+        
+        // Hardcoded Lucky Card Object       
+        u.setSuit(Card.SUITS[2]);
+        u.setValue(5);
         System.out.println("Your card is a " + u.getValue() + " of "+ u.getSuit() + ".");
         
         for (int i = 0; i < magicHand.length; i++) {
