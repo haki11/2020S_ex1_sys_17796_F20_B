@@ -6,6 +6,7 @@ import java.util.Scanner;
  *
  * @author dancye
  * @author Paul Bonenfant
+ * @author Tyler Gaetan
  */
 public class CardTrick {
 
@@ -28,6 +29,7 @@ public class CardTrick {
         Scanner sc = new Scanner(System.in);
         Card g = new Card();
         //insert code to ask the user for Card value and suit, create their card
+        
         System.out.println("Please enter value for a suit(between 0-3)");
         int guessSuit = sc.nextInt();
         System.out.println("Please enter a card value(between 1-13)");
@@ -38,8 +40,12 @@ public class CardTrick {
         //System.out.println(g.getSuit() + g.getValue());
         /*Print statement for debugging*/
         
+        Card luckyCard = new Card();
+        luckyCard.setValue(1);
+        luckyCard.setSuit(card.SUITS[2]);
+            
         // and search magicHand here
-         for(int i = 0; i < magicHand.length; i++)
+        for(int i = 0; i < magicHand.length; i++)
         {
         if(g.getValue() == magicHand[i].getValue() && g.getSuit().equals(magicHand[i].getSuit()))
         {
@@ -48,8 +54,7 @@ public class CardTrick {
         }
         /*else statement will repeat for each iteration of the array*/
         }
-         
-         
+             
         sc.close();
     }
 
