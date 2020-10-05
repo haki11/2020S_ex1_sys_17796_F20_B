@@ -20,7 +20,7 @@ public class CardTrick {
         for (int i = 0; i < magicHand.length; i++) {
             Card c = new Card();
             c.setValue(ran.nextInt(13)+1);//c.setValue(insert call to random number generator here)
-            c.setSuit(Card.SUITS[ran.nextInt(4)]);
+            c.setSuit(Card.SUITS[ran.nextInt(4)]); // cahnge 4 to 13+1
             magicHand[i] = c;//c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
         }
 
@@ -29,18 +29,18 @@ public class CardTrick {
         String suit;
         boolean found = false;//insert code to ask the user for Card value and suit, create their card
         Scanner scan = new Scanner(System. in);
-        System.out.print("pick a card");
+        System.out.print("pick a card"); //need to be replaced
         value = scan.nextInt();
-        System.out.print("Enter a suit");
+        System.out.print("Enter a suit"); //need to be replaced
         suit = scan.next();
-        userCard.setValue(value);
+        userCard.setValue(value);   //boolean
         userCard.setSuit(suit);
         
         
         for(int i=0;i<magicHand.length;i++)
             {
                 if(magicHand[i].getValue() == userCard.getValue() && magicHand[i].getSuit().equalsIgnoreCase(userCard.getSuit()))
-                {
+                {  // need add systemout...
                     found = true;
                     break;
                 }
