@@ -1,6 +1,5 @@
 package pickacard;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,47 +9,38 @@ import java.util.Scanner;
  *
  * @author dancye
  * @author Paul Bonenfant
+ * @author zenanwang
  */
 public class CardTrick {
-
     public static void main(String[] args) {
-        
+
         Card[] magicHand = new Card[7];
-        Random ran = new Random();
+        Scanner scan = new Scanner(System.in);
+        Random generator = new Random();
+        generator.setSeed(System.currentTimeMillis());
         for (int i = 0; i < magicHand.length; i++) {
             Card c = new Card();
-            c.setValue(ran.nextInt(13)+1);//c.setValue(insert call to random number generator here)
-            c.setSuit(Card.SUITS[ran.nextInt(4)]); // cahnge 4 to 13+1
-            magicHand[i] = c;//c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            c.setValue(generator.nextInt(13) + 1);
+            c.setSuit(Card.SUITS[generator.nextInt(4)]);
+            magicHand[i] = c;
         }
-
-        Card userCard = new Card();
-        int value;
-        String suit;
-        boolean found = false;//insert code to ask the user for Card value and suit, create their card
-        Scanner scan = new Scanner(System. in);
-        System.out.print("pick a card"); //need to be replaced
-        value = scan.nextInt();
-        System.out.print("Enter a suit"); //need to be replaced
-        suit = scan.next();
-        userCard.setValue(value);   //boolean
-        userCard.setSuit(suit);
+   
+        Card key = new Card();
+        key.setValue(4);
+        key.setSuit("spades");
+        boolean found = false;
+        System.out.println("Searching for: " + key);
         
         
-        for(int i=0;i<magicHand.length;i++)
-            {
-                if(magicHand[i].getValue() == userCard.getValue() && magicHand[i].getSuit().equalsIgnoreCase(userCard.getSuit()))
-                {  // need add systemout...
-                    found = true;
-                    break;
-                }
+        
+        for (int i = 0; i < magicHand.length; i++) {
+            if ((magicHand[i].getValue() == key.getValue()) && magicHand[i].getSuit().equalsIgnoreCase(key.getSuit())) {
+                System.out.println("Card is found in magic hand at index " + (i+1));
+                found = true;
+                break;
             }
-         if(found)
-            System.out.println("card found in magchand");
-         else
-            System.out.println("card not found in magichand");
-    }// and search magicHand here
-        //Then report the result here
-    
-
+        }
+        if (!found)
+            System.out.println("Card is not found in magic hand.");
+    }
 }
