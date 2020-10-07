@@ -1,5 +1,5 @@
 // CardTrick.java
-//LuckyCard
+//LuckyCardd
 package pickacard;
 
 //import java.util.Arrays;
