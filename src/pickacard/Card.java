@@ -7,15 +7,20 @@ package pickacard;
  * There are 52 cards in a deck, no jokers.
  * This code is to be used in Exercise 1. When you create your own branch,
  * add your name as an author.
+ * @author Julia Soifert
  * @author dancye
  * @author Paul Bonenfant
+ * Last modified Oct. 9, 2020 by Julia Soifert
  */
 public class Card {
 
    private String suit; //clubs, spades, diamonds, hearts
    private int value;//1-13
 
-   public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
+    /**
+     *
+     */
+    public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
     /**
      * @return the suit
      */
@@ -45,5 +50,6 @@ public class Card {
     }
    
    
-    
+   //@Override
+   public String toString(){return this.value+this.suit;}
 }
