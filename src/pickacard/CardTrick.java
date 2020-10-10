@@ -116,15 +116,23 @@ public class CardTrick {
            
         }
         
-        Card pickCard = new Card();
-        pickCard.setSuit(enterSuit());
-        pickCard.setValue(enterNum());
+       // Card pickCard = new Card();
+        //pickCard.setSuit(enterSuit());
+        //pickCard.setValue(enterNum());
 
+         Card luckyCard = new Card();
+        luckyCard.setSuit("D");
+        luckyCard.setValue(8);
+        
         for (int i = 0; i < magicHand.length; i++) {
-           // System.out.println("got here" + magicHand[i]);
-  
-           if (magicHand[i].toString().equals(pickCard.toString())) {
+         
+            
+           if (magicHand[i].toString().equals(luckyCard.toString())) {
                 System.out.println("You Win!");
+            }else{System.out.println("You Lose!");
+  
+          // if (magicHand[i].toString().equals(pickCard.toString())) {
+            //    System.out.println("You Win!");
             }
 
         }
